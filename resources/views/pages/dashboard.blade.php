@@ -127,12 +127,14 @@
     <script>
         jQuery(document).ready(function($) {
             "use strict";
+
             // Pie chart flotPie1
             var piedata = [
                 { label: "Pending", data: [[1, {{ $pie['pending']}} ]], color: '#5c6bc0'},
                 { label: "Gagal", data: [[1, {{ $pie['failed']}} ]], color: '#ef5350'},
                 { label: "Sukses", data: [[1, {{ $pie['success']}} ]], color: '#66bb6a'}
             ];
+
             $.plot('#flotPie1', piedata, {
                 series: {
                     pie: {
@@ -175,10 +177,12 @@
                     hoverable: true,
                     clickable: true
                 }
+
             });
             // cellPaiChart End
             // Line Chart  #flotLine5
             var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];
+
             var plot = $.plot($('#flotLine5'),[{
                 data: newCust,
                 label: 'New Data Flow',
@@ -230,6 +234,7 @@
                     showGrid: true
                 }
             });
+
                 chart.on('draw', function(data) {
                     if(data.type === 'line' || data.type === 'area') {
                         data.element.animate({
@@ -289,6 +294,7 @@
                             mode: 'nearest',
                             intersect: true
                         }
+
                     }
                 } );
             }
